@@ -1,0 +1,2 @@
+# Copy to .dev.vars for local live-Discord testing. Never commit .dev.vars.
+DISCORD_CLIENT_SECRET=

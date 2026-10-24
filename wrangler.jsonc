@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sidebet",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"],
+  },
+  "vars": { "DEMO_MODE": "false", "DISCORD_CLIENT_ID": "" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sidebet",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "env": {
+    "local": {
+      "vars": { "DEMO_MODE": "true", "DISCORD_CLIENT_ID": "" },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "sidebet-local",
+          "database_id": "00000000-0000-0000-0000-000000000000",
+          "migrations_dir": "migrations",
+        },
+      ],
+    },
+  },
+}
